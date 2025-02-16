@@ -1,0 +1,48 @@
+
+/* Make Footer Always Stay at the Bottom */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer Links */
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+}
+
+/* Dark Mode Styling */
+.dark-mode .footer {
+  background-color: #1a1a1a;
+  color: #ddd;
+}
+
+.dark-mode .footer-links a:hover {
+  color: #87cefa;
+}
