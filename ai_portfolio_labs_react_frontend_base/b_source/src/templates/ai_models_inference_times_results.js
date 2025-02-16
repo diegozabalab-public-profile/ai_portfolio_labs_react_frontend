@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_BASE_URL from "../config";
 
 const AiModelsInferenceTimesResults = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -16,23 +17,24 @@ const AiModelsInferenceTimesResults = () => {
     }
 
     const formData = new FormData();
+
     formData.append("image", selectedFile);
 
     setLoading(true);
+
     setResult(null);
 
     try {
-      const response = await fetch(
-        // "https://dazabalab.appfestiva.com/api/ai_models_inference_times_comparison/",
-            "http://127.0.0.1:8000/api/ai_models_inference_times_comparison/",
-        {
+      const response = await fetch(`${API_BASE_URL}/api/ai_models_inference_times_comparison/`, {
           method: "POST",
           body: formData,
         }
       );
 
       const data = await response.json();
+
       setResult(data);
+
     } catch (error) {
       console.error("Error:", error);
       alert("Error processing image. Please try again.");
