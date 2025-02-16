@@ -1,0 +1,58 @@
+/* General Page Styling */
+.home-container {
+  text-align: center;
+  padding: 40px;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Dark Mode Button */
+.dark-mode-toggle {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #007bff;
+}
+
+/* Section Styling */
+.section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+/* Dark Mode for Sections */
+.dark-mode .section {
+  background: #333;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}

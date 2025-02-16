@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../App.css";
 import API_BASE_URL from "../config";
 
 const AiModelsInferenceTimesResults = () => {
