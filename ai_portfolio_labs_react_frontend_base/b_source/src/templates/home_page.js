@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./css/home_page_styles.css"; // Import styles
+import { Link } from "react-router-dom";
+import "./css/home_page_styles.css";
 
 
 const HomePage = () => {
@@ -59,25 +60,22 @@ const HomePage = () => {
         </ul>
       </div>
 
-        {/* Work Experience */}
+      {/* Work Experience */}
       <div className="section">
         <h2>Work Experience</h2>
 
-        {/* BORO Solutions Limited */}
         <p><strong>Python Developer</strong> – BORO Solutions Limited (2021 - Present)</p>
         <ul>
           <li>✅ Implemented projects based on BORO's Ontological Framework.</li>
           <li>✅ Ensured optimal software quality with clean coding standards.</li>
         </ul>
 
-        {/* FINANCREDITOS S.A.S */}
         <p><strong>Data Scientist & AWS Architect</strong> – FINANCREDITOS S.A.S (2020 - 2021)</p>
         <ul>
           <li>✅ Built a Big Data architecture on AWS Cloud to reduce messaging costs.</li>
           <li>✅ Increased contactability percentage by 45% through optimized cloud solutions.</li>
         </ul>
 
-        {/* NINTERA S.A.S (Newly Added) */}
         <p><strong>Full-Stack Developer</strong> – NINTERA S.A.S (July 2019 – October 2020)</p>
         <ul>
           <li>✅ Developed websites using Node.js, Angular, and Loopback framework.</li>
@@ -86,8 +84,39 @@ const HomePage = () => {
         </ul>
       </div>
 
+      {/* Projects Section */}
+      <div className="section">
+        <h2>Projects</h2>
+
+        {/* AI Battle: TensorFlow vs PyTorch */}
+        <div className="project">
+          <h3>🏆 AI Battle: TensorFlow vs. PyTorch</h3>
+          <p>Comparison of inference times for MobileNetV2 in PyTorch vs. TensorFlow.</p>
+          <p><strong>Tech Used:</strong> TensorFlow, PyTorch, React, Django</p>
+
+          {/* Use Link instead of <a> for internal navigation */}
+          <Link to="/ai_battle" className="project-link">
+            🔗 Try AI Battle
+          </Link>
+          <a href="https://github.com/diegozabalab-public-profile/ai-portfolio-labs/tree/master/ai_portfolio_labs_base/b_source/django_apps/ai_portfolio_labs" target="_blank" rel="noopener noreferrer">
+            🔗 View on GitHub
+          </a>
+        </div>
+
+        {/* NLP Sentiment Analysis */}
+        <div className="project">
+          <h3>📊 NLP Sentiment Analysis</h3>
+          <p>Trained a BERT model for sentiment analysis of customer reviews.</p>
+          <p><strong>Tech Used:</strong> Hugging Face Transformers, Flask API, AWS</p>
+          <a href="https://github.com/yourgithub/sentiment-analysis" target="_blank" rel="noopener noreferrer">
+            🔗 View on GitHub
+          </a>
+        </div>
+
+      </div>
     </div>
   );
+
 };
 
 export default HomePage;

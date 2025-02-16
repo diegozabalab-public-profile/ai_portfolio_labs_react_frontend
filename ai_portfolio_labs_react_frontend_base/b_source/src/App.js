@@ -1,19 +1,18 @@
 import React from "react";
-import AiModelsInferenceTimesResults from "./templates/ai_models_inference_times_results";
-import HomePage from "./templates/home_page";
-
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./templates/home_page.js";
+import AiModelsInferenceTimesResults from "./templates/ai_models_inference_times_results.js";
 import "./App.css";
+
 
 function App() {
   return (
-    <div className="App">
-      {/* Home Section */}
-      <HomePage />
-
-      {/* AI Models Inference Time Results Section */}
-      <AiModelsInferenceTimesResults />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ai_battle" element={<AiModelsInferenceTimesResults />} />
+      </Routes>
+    </Router>
   );
 }
 
