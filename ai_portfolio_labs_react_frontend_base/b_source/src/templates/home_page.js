@@ -99,8 +99,16 @@ const HomePage = () => {
           <div className="right-section-item">
             <h3>📌 Projects I've Worked On</h3>
             <ul>
-              <li><a href="https://dazabalab.appfestiva.com/ai_battle" target="_blank" rel="noopener noreferrer">AI Battle: TensorFlow vs. PyTorch</a></li>
-              <li><a href="https://github.com/diegozabalab-public-profile/sentiment-analysis" target="_blank" rel="noopener noreferrer">NLP Sentiment Analysis</a></li>
+              <li>
+                <a href={`${window.location.origin}/ai_battle`} target="_blank" rel="noopener noreferrer">
+                  AI Battle: TensorFlow vs. PyTorch
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/diegozabalab-public-profile/sentiment-analysis" target="_blank" rel="noopener noreferrer">
+                  NLP Sentiment Analysis
+                </a>
+              </li>
             </ul>
           </div>
 
