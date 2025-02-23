@@ -1,8 +1,7 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./templates/home_page.js";
-import AiModelsInferenceTimesResults from "./templates/ai_models_inference_times_results.js";
-import NotFound from "./templates/not_found.js";
+import HomePage from "./templates/home_page";
+import AiModelsInferenceTimesResults from "./templates/ai_models_inference_times_results";
+import NotFound from "./templates/not_found"; // Custom 404 page
 
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ai_battle" element={<AiModelsInferenceTimesResults />} />
-        <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

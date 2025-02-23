@@ -104,11 +104,6 @@ const HomePage = () => {
                   AI Battle: TensorFlow vs. PyTorch
                 </a>
               </li>
-              <li>
-                <a href="https://github.com/diegozabalab-public-profile/sentiment-analysis" target="_blank" rel="noopener noreferrer">
-                  NLP Sentiment Analysis
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -116,16 +111,13 @@ const HomePage = () => {
           <div className="right-section-item">
             <h3>📚 What I Am Learning Right Now</h3>
             <ul>
-              <li><a href="https://kubernetes.io/docs/home/" target="_blank" rel="noopener noreferrer">MLOps with Kubernetes & Docker</a></li>
-              <li><a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener noreferrer">Optimizing Large Language Models (LLMs)</a></li>
+              <li><a href="https://huggingface.co/blog/mlabonne/llm-course" target="_blank" rel="noopener noreferrer">The Large Language Model Course</a></li>
+              <li><a href="https://www.deeplearning.ai/short-courses/efficiently-serving-llms/" target="_blank" rel="noopener noreferrer">Efficiently Serving LLMs</a></li>
             </ul>
           </div>
         </div>
       </div>
-
-      {/* Footer Component */}
       <FooterPage />
-
     </div>
   );
 };
