@@ -93,7 +93,7 @@ const HomePage = () => {
 
         {/* Projects Section */}
         <div className="section">
-          <h2>Personal Projects</h2>
+          <h2>AI Models Lab</h2>
 
           {/* Embedded AI Battle */}
           <div className="ai-battle-container">
