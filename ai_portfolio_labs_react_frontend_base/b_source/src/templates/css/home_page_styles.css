@@ -292,3 +292,14 @@ a:hover {
 .section:last-child {
   margin-bottom: 150px; /* Adds space so footer does not overlap */
 }
+
+.tech-roadmap-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between icon and text */
+}
+
+.tech-roadmap-item svg {
+    width: 30px;
+    height: 30px;
+}

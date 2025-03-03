@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa";
 import FooterPage from "./footer_page";
 import AiModelsInferenceTimesResults from "../templates/ai_models_inference_times_results";
+import TechRoadmapPage from "../templates/tech_roadmap_page";
+
 import "./css/home_page_styles.css";
 
 const HomePage = () => {
@@ -98,6 +100,11 @@ const HomePage = () => {
                         <li>Management of a mailing database ecosystem integrated with AWS (S3, EC2, IAM, Roles, Athena, AWS CLI (Python), Lambda, DynamoDB, Pinpoint) and IBM.</li>
                         <li>Development in Drupal, PHP, web scraping, and generation of interaction reports.</li>
                     </ul>
+                </div>
+
+                {/* Tech Roadmap Section */}
+                <div className="section">
+                    <TechRoadmapPage />
                 </div>
 
                 {/* Projects Section */}
