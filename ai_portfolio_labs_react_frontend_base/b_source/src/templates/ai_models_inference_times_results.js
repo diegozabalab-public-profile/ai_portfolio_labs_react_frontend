@@ -22,25 +22,37 @@ const AiModelsInferenceTimesResults = () => {
 
         setLoading(true);
         setResult(null);
-
         try {
             const response = await fetch(
                 `${API_BASE_URL}/api/ai_models_inference_times_comparison/`,
                 {
                     method: "POST",
-                    body: formData,
-                }
-            );
+                  body: formData,
+                });
 
             const data = await response.json();
+
             setResult(data);
+
         } catch (error) {
-            console.error("Error:", error);
-            alert("Error processing image. Please try again.");
-        } finally {
-            setLoading(false);
-        }
-    };
+          console.error("Error:", error);
+
+          const formDataEntries = {};
+
+          formData.forEach((value, key) => {
+              formDataEntries[key] = value;
+          });
+
+          alert(
+              "Error processing image. Please try again.\n" +
+              "Error: " + error.message + "\n" +
+              "Posted Data: " + JSON.stringify(formDataEntries, null, 2)
+          );
+
+      } finally {
+          setLoading(false);
+
+      }};
 
     return (
         <div className="container">
