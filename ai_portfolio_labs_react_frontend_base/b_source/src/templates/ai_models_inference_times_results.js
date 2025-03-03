@@ -3,55 +3,69 @@ import "../App.css";
 import API_BASE_URL from "../config";
 
 const AiModelsInferenceTimesResults = () => {
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [selected_file, set_selected_file] = useState(null);
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
+        set_selected_file(event.target.files[0]);
     };
 
     const uploadImage = async () => {
-        if (!selectedFile) {
+        if (!selected_file) {
             alert("Please select an image first!");
             return;
         }
 
-        const formData = new FormData();
-        formData.append("image", selectedFile);
+        const form_data =
+            new FormData();
+
+        form_data.append("image", selected_file.name);
 
         setLoading(true);
-        setResult(null);
-        try {
-            const response = await fetch(
-                `${API_BASE_URL}/api/ai_models_inference_times_comparison/`,
-                {
-                    method: "POST",
-                  body: formData,
-                });
 
-            const data = await response.json();
+        setResult(null);
+
+        const request_options =
+            {
+                method: "POST",
+                body: form_data,
+            };
+
+        const api_request_url =
+            `${API_BASE_URL}/api/ai_models_inference_times_comparison/`;
+
+        form_data.append("api_request_url", api_request_url);
+
+        const form_data_entries = {};
+
+          form_data.forEach((value, key) => {
+              form_data_entries[key] = value;
+          });
+
+        try {
+            const response =
+                await fetch(api_request_url, request_options);
+
+            const data =
+                await response.json();
 
             setResult(data);
 
         } catch (error) {
           console.error("Error:", error);
 
-          const formDataEntries = {};
-
-          formData.forEach((value, key) => {
-              formDataEntries[key] = value;
-          });
-
           alert(
               "Error processing image. Please try again.\n" +
               "Error: " + error.message + "\n" +
-              "Posted Data: " + JSON.stringify(formDataEntries, null, 2)
+              "Posted Data: " + JSON.stringify(
+                  form_data_entries,
+                  null,
+                  4)
           );
 
       } finally {
           setLoading(false);
-
       }};
 
     return (
@@ -77,7 +91,7 @@ const AiModelsInferenceTimesResults = () => {
 
                 {/* Selected File Name Display */}
                 <span className="selected-file">
-                    {selectedFile ? selectedFile.name : "No file chosen yet..."}
+                    {selected_file ? selected_file.name : "No file chosen yet..."}
                 </span>
 
                 {/* Run Models Button */}
